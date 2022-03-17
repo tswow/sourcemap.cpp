@@ -379,7 +379,7 @@ static void emit_object_indented    (SB *out, const JsonNode *object, const char
 
 static int write_hex16(char *out, uint16_t val);
 
-static JsonNode *mknode(JsonTag tag);
+static JsonNode *mknode(__JsonTag tag);
 static void append_node(JsonNode *parent, JsonNode *child);
 static void prepend_node(JsonNode *parent, JsonNode *child);
 static void append_member(JsonNode *object, char *key, JsonNode *value);
@@ -513,7 +513,7 @@ JsonNode *json_first_child(const JsonNode *node)
   return NULL;
 }
 
-static JsonNode *mknode(JsonTag tag)
+static JsonNode *mknode(__JsonTag tag)
 {
   JsonNode *ret = (JsonNode*) calloc(1, sizeof(JsonNode));
   if (ret == NULL)
