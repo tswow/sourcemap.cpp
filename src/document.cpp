@@ -1,5 +1,4 @@
 // include library
-#include <omp.h>
 #include <string>
 #include <istream>
 #include <ostream>
@@ -388,8 +387,6 @@ namespace SourceMap
 
 		size_t i = 0;
 
-		double start = omp_get_wtime();
-		double end = omp_get_wtime();
 
 		size_t offset = sources.size();
 
@@ -423,10 +420,6 @@ namespace SourceMap
 			}
 			++i;
 		}
-		end = omp_get_wtime();
-
-		cerr << "Benchmark: " << (end - start) << endl;
-
 	}
 
 	// STL helper
